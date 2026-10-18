@@ -2,12 +2,10 @@
   "name": "notes-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^3.1.2",
     "@material-ui/icons": "^3.0.1",
-    "axios": "^0.16.2",
-    "firebase": "^5.5.3",
     "immutable": "^3.8.2",
     "material-ui": "^0.20.2",
     "mobx": "^5.5.0",
@@ -26,8 +24,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3"
   }
 }

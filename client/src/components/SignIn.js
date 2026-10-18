@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Navbar from './TopNav/TopNav';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import DemoButton from './DemoButton';
 
 const styles = theme => ({
   layout: {
@@ -141,7 +142,8 @@ class SignInForm extends Component {
                 >
                   Sign in
                 </Button>
-                <div>
+                <DemoButton />
+                <div style={{ marginTop: 16 }}>
                   <Link to={routes.PASSWORD_FORGET}>Lost your password?</Link>
                 </div>
               </form>

@@ -128,6 +128,12 @@ class NoteArea extends React.Component {
     this.setState({ value });
   };
 
+  // Modern Chrome fires selectionchange with a range equal to the stored one,
+  // so slate-react 0.18 never marks the value focused and blurs the editor.
+  onFocus = (event, change) => {
+    if (change.value.selection.isBlurred) change.focus();
+  };
+
   onKeyDown = (e, change) => {
     if (!e.ctrlKey) {
 			return;
@@ -234,6 +240,7 @@ class NoteArea extends React.Component {
           className={classes.scroll} 
           value={this.state.value}
           onChange={this.onChange}
+          onFocus={this.onFocus}
           onKeyDown={this.onKeyDown}
           renderMark={this.renderMark}
           style={{

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { auth, db } from '../firebase';
 import * as routes from '../constants/routes';
+import DemoButton from './DemoButton';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControl from '@material-ui/core/FormControl';
@@ -174,6 +175,7 @@ class SignUpForm extends Component {
                 >
                   Create Account
                 </Button>
+                <DemoButton />
                 <FormControl margin="normal" fullWidth>
                   <Link to={routes.SIGN_IN}>Already have an account?</Link>
                 </FormControl>
